@@ -8,7 +8,7 @@ if($_SERVER["REQUEST_METHOD"] == 'POST'){
         $stmt->bind_param("s", $nome);
         $stmt->execute();
 
-        $stmt->commit();
+        $conn->commit();
 
         echo "Riuscito";
 
