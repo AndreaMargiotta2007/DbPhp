@@ -6,7 +6,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     try{
         $nome = $_POST['nome'];
         $id = $_POST['id'];
-        $stmt = $conn->prepare("ALTER TABLE ipad set nome = ? where id = ?");
+        $stmt = $conn->prepare("UPDATE ipad set nome = ? where id = ?");
         $stmt->bind_param('si', $nome, $id);
 
         $stmt->execute();
