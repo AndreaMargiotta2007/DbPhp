@@ -9,6 +9,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         $stmt->execute();
 
         $stmt->bind_result($nome);
+        $stmt->fetch();
         echo "Ciao ". $nome;
     } catch(Exception $e){
         $conn->rollback();
