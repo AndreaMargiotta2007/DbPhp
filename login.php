@@ -19,6 +19,7 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
         } else {
             echo "Email o password errati.";
         }
+        $conn->commit();
     }catch(Exception $e){
         die("<br>Errore");
     }
