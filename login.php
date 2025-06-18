@@ -8,7 +8,7 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
         $email=$_POST['email'];
         $pass= $_POST['pass'];
 
-        $stmt = $conn->prepare("SELECT password FROM utentiipad where email = ?");
+        $stmt = $conn->prepare("SELECT pass FROM utentiipad where email = ?");
         $stmt->bind_param("s", $email);
         $stmt->execute();
         $stmt->bind_result($dbPassword);
