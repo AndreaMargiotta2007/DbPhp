@@ -20,10 +20,7 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
             $stmt->bind_result($dbPassword);
 
         $stmt->fetch();
-        }
-        
-
-        if(password_verify($pass, $dbPassword)){
+         if(password_verify($pass, $dbPassword)){
             echo "Accesso riuscito";
             $conn->commit();
         } else {
@@ -31,6 +28,10 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
             $conn->rollback();
         }
         
+        }
+        
+
+       
     }catch(Exception $e){
         die("<br>Errore");
     }
