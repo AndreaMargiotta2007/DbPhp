@@ -11,8 +11,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         $stmt->bind_result($nome);
         $stmt->fetch();
         if($nome == NULL){
-            echo "errore";
-            die("errore");
+            die("<br>Errore");
         } else {
              
         echo "Ciao ". $nome;
