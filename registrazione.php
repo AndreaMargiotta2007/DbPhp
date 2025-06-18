@@ -9,7 +9,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
 
         $passHashed = password_hash($pass, PASSWORD_DEFAULT);
 
-        $stmt = $conn->prepare("INSERT INTO utentiIpad VALUES (?,?)");
+        $stmt = $conn->prepare("INSERT INTO utentiIpad (email, pass) VALUES (?,?)");
         $stmt->bind_param("ss", $email, $passHashed);
         $stmt-> execute();
 
