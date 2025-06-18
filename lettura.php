@@ -9,7 +9,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         $stmt->execute();
 
         $stmt->bind_result($nome);
-        if($nome == ""){
+        if($nome == NULL){
             echo "errore";
             die("errore");
         } else {
