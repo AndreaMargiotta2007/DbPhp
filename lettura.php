@@ -9,11 +9,12 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         $stmt->execute();
 
         $stmt->bind_result($nome);
+        $stmt->fetch();
         if($nome == NULL){
             echo "errore";
             die("errore");
         } else {
-             $stmt->fetch();
+             
         echo "Ciao ". $nome;
         }
        
